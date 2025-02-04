@@ -1,7 +1,7 @@
 import { openai } from './instantiate-model-connection'
 
 
-const runLLM = async ({userMessage}: {userMessage: string}) => {
+const runUserQueryThroughModel = async ({userMessage}: {userMessage: string}) => {
   const response = await openai.chat.completions.create({
     model: "gpt-4o-mini",
     messages: [
@@ -11,5 +11,5 @@ const runLLM = async ({userMessage}: {userMessage: string}) => {
   return response.choices[0].message.content
 }
 
-export default runLLM
+export default runUserQueryThroughModel
  
