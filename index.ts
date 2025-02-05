@@ -10,9 +10,13 @@ if (!userMessage) {
 }
 
 await addMessages([{role: 'user', content: userMessage}])
+
 const messages = await getMessages()
 const response = await runUserQueryThroughModel({
   messages
 })
 
-console.log(response)
+await addMessages([{role: 'assistant', content: response}])
+
+
+console.log( response)
