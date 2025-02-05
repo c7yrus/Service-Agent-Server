@@ -10,7 +10,9 @@ const runUserQueryThroughModel = async ({messages, tools}: {messages: AIMessage[
     messages,
     tools: formattedTools,
     tool_choice: 'auto',
-    parallel_tool_calls: false
+    parallel_tool_calls: false,
+    // max_tokens: 2000,
+    // response_format: {type: 'json_object'}
   })
 
   //Use this if there is no tool call because if there is tool call there wont be the method content on the response object.
