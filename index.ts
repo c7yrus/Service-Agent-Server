@@ -15,4 +15,4 @@ const response = await runUserQueryThroughModel({
   messages
 })
 
-console.log( response)
+console.log(response)
