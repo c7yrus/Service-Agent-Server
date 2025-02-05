@@ -1,6 +1,6 @@
 import 'dotenv/config'
-import runUserQueryThroughModel from './src/run-Model'
-import { addMessages, getMessages } from './src/memory'
+import { runAgent } from './src/agent'
+import { z } from 'zod'
 
 const userMessage = process.argv[2]
 
@@ -9,14 +9,12 @@ if (!userMessage) {
   process.exit(1)
 }
 
-await addMessages([{role: 'user', content: userMessage}])
+const weatherTool = {
+  name: 'get_weather',
+  parameters: z.object({})
+}
 
-const messages = await getMessages()
-const response = await runUserQueryThroughModel({
-  messages
-})
-
-await addMessages([{role: 'assistant', content: response}])
+const response = runAgent({userMessage, tools: [weatherTool]})
 
 
 console.log( response)
