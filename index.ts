@@ -1,5 +1,6 @@
 import 'dotenv/config'
-import runLLM from './src/run-Model'
+import runUserQueryThroughModel from './src/run-Model'
+import { addMessages, getMessages } from './src/memory'
 
 const userMessage = process.argv[2]
 
@@ -8,8 +9,10 @@ if (!userMessage) {
   process.exit(1)
 }
 
-const response = await runLLM({
-  userMessage,
+await addMessages([{role: 'user', content: userMessage}])
+const messages = await getMessages()
+const response = await runUserQueryThroughModel({
+  messages
 })
 
 console.log( response)

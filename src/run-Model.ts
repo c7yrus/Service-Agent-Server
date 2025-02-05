@@ -1,12 +1,11 @@
+import type { AIMessage } from '../types'
 import { openai } from './instantiate-model-connection'
 
-
-const runUserQueryThroughModel = async ({userMessage}: {userMessage: string}) => {
+const runUserQueryThroughModel = async ({messages}: {messages: AIMessage[]}) => {
   const response = await openai.chat.completions.create({
     model: "gpt-4o-mini",
-    messages: [
-      {role: 'user', content: userMessage}
-    ]
+    temperature: 0.1,
+    messages
   })
   return response.choices[0].message.content
 }
