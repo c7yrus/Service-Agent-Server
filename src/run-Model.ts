@@ -1,6 +1,10 @@
 import { zodFunction } from 'openai/helpers/zod';
 import type { AIMessage } from '../types'
-import { openai } from './instantiate-model-connection'
+// import { openai } from './instantiate-model-connection'
+import OpenAI from 'openai'
+
+ const openai = new OpenAI()
+
 
 const runUserQueryThroughModel = async ({messages, tools}: {messages: AIMessage[], tools: any[]}) => {
   const formattedTools = tools.map(zodFunction)
