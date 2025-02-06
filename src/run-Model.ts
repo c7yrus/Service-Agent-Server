@@ -5,7 +5,13 @@ import OpenAI from 'openai'
 
  const openai = new OpenAI()
 
- const systemPrompt = 'Try to make as many cat jokes as possible'
+ //this is how you can add better context to system prompt
+ const systemPrompt = `
+ Try to make as many cat jokes as possible
+  <context> 
+    todays date: ${new Date().toLocaleDateString()}
+  </context>
+ `
 
 const runUserQueryThroughModel = async ({messages, tools}: {messages: AIMessage[], tools: any[]}) => {
   const formattedTools = tools.map(zodFunction)
