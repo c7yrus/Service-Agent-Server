@@ -20,3 +20,4 @@ const weatherTool = {
 const response = runAgent({userMessage, tools: [weatherTool]})
 
 
+console.log( 'index', response)
