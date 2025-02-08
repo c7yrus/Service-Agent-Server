@@ -1,5 +1,7 @@
 import 'dotenv/config'
-import runLLM from './src/run-Model'
+import { runAgent } from './src/agent'
+import { z } from 'zod'
+import { tools } from './src/tools'
 
 const userMessage = process.argv[2]
 
@@ -8,8 +10,9 @@ if (!userMessage) {
   process.exit(1)
 }
 
-const response = await runLLM({
-  userMessage,
-})
 
-console.log( response)
+
+const response = runAgent({userMessage, tools})
+
+
+console.log( 'index', response)
