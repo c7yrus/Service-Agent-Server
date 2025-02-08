@@ -4,11 +4,14 @@
   "module": "index.ts",
   "type": "module",
   "scripts": {
-    "start": "npx tsx index.ts"
+    "start": "npx tsx index.ts",
+    "eval": "npx tsx evals/run.ts $1",
+    "ingest": "npx tsx src/rag/ingest.ts"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "autoevals": "^0.0.119",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
