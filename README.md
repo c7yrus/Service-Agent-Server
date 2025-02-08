@@ -10,3 +10,6 @@
 3. cd in to dashboard folder and run npm dev to see the visual representation of runnig evaluations in chart format in the web.
 
 4. To apply RAG, you need to add following variables to your .env file. You will need to create an Upstash account. 
+  a. UPSTASH_VECTOR_REST_URL
+  b. UPSTASH_VECTOR_REST_TOKEN
+
