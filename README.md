@@ -5,3 +5,6 @@ Add a db.json file at the root of your project with the initial value
 {
   "messages": []
 }
+
+
+cd in to dashboard folder and run npm dev to see the visual representation of runnig evaluations in chart format in the web.
