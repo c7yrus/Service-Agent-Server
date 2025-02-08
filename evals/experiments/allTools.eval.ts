@@ -1,6 +1,6 @@
 import 'dotenv/config'
 
-import { runLLM } from '../../src/llm'
+import runLLM  from '../../src/llm'
 import { dadJokeToolDefinition } from '../../src/tools/dadJoke'
 import { generateImageToolDefinition } from '../../src/tools/generateImage'
 import { redditToolDefinition } from '../../src/tools/reddit'
