@@ -1,6 +1,6 @@
 import type { ToolFn } from '../../types'
 import { z } from 'zod'
-import { openai } from '../instantiate-model-connection'
+import { openai } from '../ai'
 
 export const generateImageToolDefinition = {
   name: 'generate_image',

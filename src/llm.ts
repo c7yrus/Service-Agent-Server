@@ -13,7 +13,7 @@ import OpenAI from 'openai'
   </context>
  `
 
-const runUserQueryThroughModel = async ({messages, tools}: {messages: AIMessage[], tools: any[]}) => {
+const runLLM = async ({messages, tools}: {messages: AIMessage[], tools: any[]}) => {
   const formattedTools = tools.map(zodFunction)
   const response = await openai.chat.completions.create({
     model: "gpt-4o-mini",
@@ -34,5 +34,5 @@ const runUserQueryThroughModel = async ({messages, tools}: {messages: AIMessage[
   return response.choices[0].message
 }
 
-export default runUserQueryThroughModel
+export default runLLM
  

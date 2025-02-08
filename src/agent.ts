@@ -1,5 +1,5 @@
 import type { AIMessage } from '../types'
-import runUserQueryThroughModel from './run-Model'
+import runLLM from './llm'
 import { z } from 'zod'
 import { runTool } from './toolRunner'
 import { addMessages, getMessages, saveToolResponse } from './memory'
@@ -26,7 +26,7 @@ export const runAgent = async ({
 
   while (true) {
     const history = await getMessages()
-    const response = await runUserQueryThroughModel({
+    const response = await runLLM({
       messages: history,
       tools,
     })
