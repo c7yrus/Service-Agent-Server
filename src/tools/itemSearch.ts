@@ -8,7 +8,7 @@ export const itemsSearchToolDefinition = {
     query: z.string().describe('query used to vector search on items'),
   }),
   description:
-    'use this tool to find items or answer questions about items and their metada like description, condition, category and more.',
+    'use this tool to find items or answer any questions about recycling or handling items and their metada like description, condition, category and more.',
 }
 
 type Args = z.infer<typeof itemsSearchToolDefinition.parameters>
@@ -19,7 +19,7 @@ export const itemSearch: ToolFn<Args> = async ({ userMessage, toolArgs }) => {
     results = await queryItems({ query: toolArgs.query })
   } catch (e) {
     console.error(e)
-    return 'Error: Could not query the db to get movies.'
+    return 'Error: Could not query the db to get items.'
   }
 
   const formattedResults = results.map((result) => {
