@@ -7,7 +7,7 @@ import OpenAI from 'openai'
 
  //this is how you can add better context to system prompt
  const systemPrompt = `
- Try to make as many cat jokes as possible
+ Try to call get_items tools as much as you can if any questions is asked about items, where to recycle them or their condition
   <context> 
     todays date: ${new Date().toLocaleDateString()}
   </context>
