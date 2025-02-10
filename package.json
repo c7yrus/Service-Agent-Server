@@ -6,7 +6,8 @@
   "scripts": {
     "start": "npx tsx index.ts",
     "eval": "npx tsx evals/run.ts $1",
-    "ingest": "npx tsx src/rag/ingest.ts"
+    "ingest": "npx tsx src/rag/ingest.ts",
+    "ingest_item": "npx tsx src/rag/ingest_item.ts"
   },
   "author": "",
   "license": "ISC",
@@ -22,6 +23,7 @@
     "openai": "^4.82.0",
     "ora": "^8.2.0",
     "uuid": "^11.0.5",
+    "xlsx": "^0.18.5",
     "zod": "^3.24.1"
   },
   "devDependencies": {
